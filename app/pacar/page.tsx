@@ -19,6 +19,8 @@ export default function PacarPage() {
           <p><span className="font-bold">Agama:</span> Islam</p>
           <p><span className="font-bold">Tinggi:</span> 163 cm</p>
           <p><span className="font-bold">Berat:</span> 60 kg</p>
+         <p><span className="font-bold">Pekerjaan:</span> Kasir Alfamart</p>
+
         </div>
       </div>
     </section>
