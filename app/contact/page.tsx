@@ -5,39 +5,39 @@ export default function ContactPage() {
         <p className="text-blue-400 font-semibold mb-3">Contact</p>
 
         <h1 className="text-4xl md:text-5xl font-bold mb-6">
-          Hubungi Saya
+          Contact Me
         </h1>
 
         <div className="space-y-4 text-lg text-slate-300">
           <p>
             Email:{" "}
             <a
-              href="mailto:emailkamu@example.com"
+              href="mailto:mrashadyusuf@gmail.com"
               className="text-blue-400 hover:underline"
             >
-              emailkamu@example.com
+              mrashadyusuf@gmail.com
             </a>
           </p>
 
           <p>
             LinkedIn:{" "}
             <a
-              href="https://linkedin.com/in/username"
+              href="https://linkedin.com/in/muhammad-rashad-yusuf"
               target="_blank"
               className="text-blue-400 hover:underline"
             >
-              linkedin.com/in/username
+              muhammad-rashad-yusuf
             </a>
           </p>
 
           <p>
             GitHub:{" "}
             <a
-              href="https://github.com/username"
+              href="https://github.com/mrashadyusuf"
               target="_blank"
               className="text-blue-400 hover:underline"
             >
-              github.com/username
+              github.com/mrashadyusuf
             </a>
           </p>
         </div>

@@ -1,38 +1,43 @@
 export default function ProjectsPage() {
-  const projects = [
-    {
+   const projects = [
+   {
       title: "Website Portofolio",
       description:
-        "Website personal menggunakan Next.js dan Tailwind CSS untuk menampilkan profil, pengalaman, dan project.",
+         "Website personal menggunakan Next.js dan Tailwind CSS untuk menampilkan profil, pengalaman, dan project.",
       tech: "Next.js • TypeScript • Tailwind CSS",
-    },
-    {
+   },
+   {
       title: "CMS Landing Page Pegadaian",
       description:
-        "Content Management System untuk mengatur konten website Pegadaian secara dinamis.",
+         "Content Management System untuk mengatur konten website Pegadaian secara dinamis.",
       tech: "Next.js • NestJS • PostgreSQL",
-    },
-    {
+   },
+   {
       title: "Dashboard Inventory KFC",
       description:
-        "Sistem monitoring stok, receiving, transfer, dan laporan inventory cabang.",
+         "Sistem monitoring stok, receiving, transfer, dan laporan inventory cabang.",
       tech: "Angular • Spring Boot • Oracle",
-    },
-    {
+   },
+   {
       title: "Recommendation System",
       description:
-        "Sistem rekomendasi pemesanan barang menggunakan Apriori dan Random Forest.",
+         "Sistem rekomendasi pemesanan barang menggunakan Apriori dan Random Forest.",
       tech: "Python • FastAPI • Scikit-Learn",
-    },
-  ];
-
+   },
+   {
+      title: "XL Microservice App",
+      description:
+         "Melakukan bug fixing dan penambahan fitur pada aplikasi microservice XL, seperti menambahkan validasi, memperbaiki null handling, serta meningkatkan stabilitas API.",
+      tech: "Spring Boot • Golang • Microservices",
+   },
+   ];
   return (
     <section className="min-h-screen bg-slate-950 text-white px-8 py-16">
       <div className="max-w-6xl mx-auto">
         <p className="text-blue-400 font-semibold mb-3">Projects</p>
 
         <h1 className="text-4xl md:text-5xl font-bold mb-10">
-          Project Saya
+          My Projet
         </h1>
 
         <div className="grid md:grid-cols-2 gap-6">
