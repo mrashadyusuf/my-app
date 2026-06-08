@@ -34,22 +34,28 @@ const services = [
 
 const portfolioWebsites = [
   {
-    title: "Landing Page UMKM",
-    category: "Website Jualan",
+    title: "Rasa Lokal",
+    category: "UMKM Food Website",
     description:
-      "Tampilan satu halaman untuk menjelaskan produk, harga, benefit, FAQ, dan tombol order WhatsApp.",
+      "Landing page untuk bisnis camilan lokal dengan tampilan hangat, modern, dan fokus pada produk, harga, benefit, serta tombol order.",
+    image: "/images/camilan-web.png",
+    url: "https://cemilan-umkm.vercel.app/",
   },
   {
-    title: "Portfolio Personal",
-    category: "Personal Branding",
+    title: "Laundry Bersih Cepat",
+    category: "Laundry Service Website",
     description:
-      "Website profesional untuk menampilkan profil, skill, pengalaman, project, dan kontak agar terlihat siap kerja/freelance.",
+      "Website promosi jasa laundry dengan desain bersih dan profesional, menampilkan layanan, benefit, harga, cara order, dan kontak pelanggan.",
+    image: "/images/laundry-web.png",
+    url: "https://laundry-bersih-ceria.vercel.app/",
   },
   {
-    title: "Company Profile",
-    category: "Bisnis & Jasa",
+    title: "Warung Makmur",
+    category: "Grocery Store Website",
     description:
-      "Website ringkas untuk memperkenalkan layanan, keunggulan, testimoni, dan kontak perusahaan.",
+      "Website toko kelontong untuk menampilkan produk kebutuhan harian, promo, benefit belanja, testimoni, dan ajakan order secara online.",
+    image: "/images/warung-makmur-web.png",
+    url: "https://warung-makmur-kelontong.vercel.app/",
   },
 ];
 
@@ -238,14 +244,12 @@ export default function Home() {
                     <span className="h-2.5 w-2.5 rounded-full bg-yellow-400" />
                     <span className="h-2.5 w-2.5 rounded-full bg-green-400" />
                   </div>
-                  <div className="space-y-3 rounded-2xl bg-slate-950 p-4">
-                    <div className="h-24 rounded-xl bg-gradient-to-br from-cyan-400/80 to-indigo-500/80" />
-                    <div className="h-3 w-3/4 rounded-full bg-slate-700" />
-                    <div className="h-3 w-1/2 rounded-full bg-slate-800" />
-                    <div className="grid grid-cols-2 gap-2 pt-2">
-                      <div className="h-12 rounded-xl bg-slate-800" />
-                      <div className="h-12 rounded-xl bg-slate-800" />
-                    </div>
+                  <div className="overflow-hidden rounded-2xl bg-slate-950">
+                  <img
+                     src={item.image}
+                     alt={item.title}
+                     className="h-52 w-full object-contain transition duration-500 hover:scale-105"
+                  />
                   </div>
                 </div>
                 <div className="p-6">
@@ -254,6 +258,14 @@ export default function Home() {
                   </p>
                   <h3 className="mb-3 text-xl font-semibold">{item.title}</h3>
                   <p className="leading-relaxed text-slate-300">{item.description}</p>
+                  <a
+                     href={item.url}
+                     target="_blank"
+                     rel="noreferrer"
+                     className="mt-5 inline-flex rounded-full border border-cyan-300/40 px-4 py-2 text-sm font-semibold text-cyan-300 transition hover:bg-cyan-300 hover:text-slate-950"
+                  >
+                     Lihat Website
+                  </a>
                 </div>
               </article>
             ))}
@@ -283,49 +295,77 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       <section id="contact" className="scroll-mt-24 px-6 py-24">
-        <div className="mx-auto max-w-4xl rounded-[2rem] border border-cyan-300/20 bg-gradient-to-br from-cyan-400/10 to-indigo-500/10 p-8 text-center md:p-12">
-          <p className="mb-3 font-semibold text-cyan-300">Contact</p>
-          <h2 className="text-3xl font-bold md:text-5xl">Tertarik bekerja sama?</h2>
-          <p className="mx-auto mt-5 max-w-2xl leading-relaxed text-slate-300">
+      <div className="mx-auto max-w-5xl rounded-[2rem] border border-cyan-300/20 bg-gradient-to-br from-cyan-400/10 to-indigo-500/10 p-8 md:p-12">
+         <div className="text-center">
+            <p className="mb-3 font-semibold text-cyan-300">Contact</p>
+            <h2 className="text-3xl font-bold md:text-5xl">
+            Tertarik bekerja sama?
+            </h2>
+            <p className="mx-auto mt-5 max-w-2xl leading-relaxed text-slate-300">
             Kirim pesan untuk diskusi project, pembuatan website portfolio,
             landing page jualan, atau pengembangan aplikasi web.
-          </p>
+            </p>
+         </div>
 
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
+         <div className="mt-10 grid gap-4 md:grid-cols-2">
             <a
-               href="https://wa.me/6281947714606"
-               target="_blank"
-               rel="noreferrer"
-               className="rounded-full bg-cyan-400 px-6 py-3 font-semibold text-slate-950 transition hover:-translate-y-1 hover:bg-cyan-300"
+            href="https://wa.me/6281947714606"
+            target="_blank"
+            rel="noreferrer"
+            className="group rounded-2xl border border-white/10 bg-slate-950/50 p-5 transition hover:-translate-y-1 hover:border-cyan-300/60 hover:bg-cyan-300/10"
             >
-               Hubungi via WhatsApp
+            <p className="mb-1 text-sm font-semibold text-cyan-300">WhatsApp</p>
+            <p className="text-lg font-bold text-white">+62 819-4771-4606</p>
+            <p className="mt-2 text-sm text-slate-400 group-hover:text-slate-300">
+               Klik untuk chat langsung
+            </p>
             </a>
+
             <a
-               href="https://mail.google.com/mail/?view=cm&fs=1&to=mrashadyusuf2@gmail.com"
-              className="rounded-full bg-cyan-400 px-6 py-3 font-semibold text-slate-950 transition hover:-translate-y-1 hover:bg-cyan-300"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=mrashadyusuf2@gmail.com"
+            target="_blank"
+            rel="noreferrer"
+            className="group rounded-2xl border border-white/10 bg-slate-950/50 p-5 transition hover:-translate-y-1 hover:border-cyan-300/60 hover:bg-cyan-300/10"
             >
-              Email Saya
+            <p className="mb-1 text-sm font-semibold text-cyan-300">Email</p>
+            <p className="break-all text-lg font-bold text-white">
+               mrashadyusuf2@gmail.com
+            </p>
+            <p className="mt-2 text-sm text-slate-400 group-hover:text-slate-300">
+               Klik untuk kirim email
+            </p>
             </a>
+
             <a
-              href="https://github.com/mrashadyusuf"
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-full border border-white/10 px-6 py-3 font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-cyan-300 hover:text-cyan-300"
+            href="https://github.com/mrashadyusuf"
+            target="_blank"
+            rel="noreferrer"
+            className="group rounded-2xl border border-white/10 bg-slate-950/50 p-5 transition hover:-translate-y-1 hover:border-cyan-300/60 hover:bg-cyan-300/10"
             >
-              GitHub
+            <p className="mb-1 text-sm font-semibold text-cyan-300">GitHub</p>
+            <p className="text-lg font-bold text-white">@mrashadyusuf</p>
+            <p className="mt-2 text-sm text-slate-400 group-hover:text-slate-300">
+               Klik untuk melihat repository
+            </p>
             </a>
+
             <a
-              href="https://linkedin.com/in/muhammad-rashad-yusuf"
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-full border border-white/10 px-6 py-3 font-semibold text-slate-200 transition hover:-translate-y-1 hover:border-cyan-300 hover:text-cyan-300"
+            href="https://linkedin.com/in/muhammad-rashad-yusuf"
+            target="_blank"
+            rel="noreferrer"
+            className="group rounded-2xl border border-white/10 bg-slate-950/50 p-5 transition hover:-translate-y-1 hover:border-cyan-300/60 hover:bg-cyan-300/10"
             >
-              LinkedIn
+            <p className="mb-1 text-sm font-semibold text-cyan-300">LinkedIn</p>
+            <p className="break-all text-lg font-bold text-white">
+               linkedin.com/in/muhammad-rashad-yusuf
+            </p>
+            <p className="mt-2 text-sm text-slate-400 group-hover:text-slate-300">
+               Klik untuk melihat profil profesional
+            </p>
             </a>
-          </div>
-        </div>
+         </div>
+      </div>
       </section>
     </main>
   );
