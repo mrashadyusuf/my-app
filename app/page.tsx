@@ -72,6 +72,33 @@ const skills = [
   "GitLab CI/CD",
 ];
 
+const pricingPackages = [
+  {
+    name: "Paket Starter",
+    price: "Rp200.000",
+    description:
+      "Landing page 1 halaman untuk kebutuhan promosi sederhana.",
+    features: [
+      "Responsive di HP dan laptop",
+      "Deploy ke Vercel",
+      "1x revisi kecil",
+      "Revisi tambahan dikenakan biaya",
+    ],
+  },
+  {
+    name: "Paket Business",
+    price: "Rp300.000",
+    description:
+      "Landing page lengkap seperti contoh website laundry, cocok untuk UMKM dan jasa.",
+    features: [
+      "Responsive di HP dan laptop",
+      "Deploy ke Vercel",
+      "3x revisi kecil",
+      "Revisi tambahan dikenakan biaya",
+    ],
+  },
+];
+
 export default function Home() {
   return (
     <main className="overflow-hidden bg-[#070A13] text-white">
@@ -274,26 +301,96 @@ export default function Home() {
       </section>
 
       <section id="services" className="scroll-mt-24 px-6 py-24">
-        <div className="mx-auto grid max-w-6xl gap-10 md:grid-cols-[0.9fr_1.1fr]">
-          <div>
-            <p className="mb-3 font-semibold text-cyan-300">Services</p>
-            <h2 className="text-3xl font-bold md:text-5xl">Apa yang bisa saya bantu?</h2>
-            <p className="mt-5 leading-relaxed text-slate-300">
-              Saya bisa membantu membuat website yang langsung bisa dipakai untuk
-              promosi, portfolio, company profile, atau kebutuhan bisnis kecil.
-            </p>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            {services.map((service) => (
-              <div
-                key={service}
-                className="rounded-3xl border border-white/10 bg-white/[0.04] p-6"
-              >
-                <p className="text-lg font-semibold">{service}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+         <div className="mx-auto max-w-6xl">
+            <div className="grid gap-10 md:grid-cols-[0.9fr_1.1fr]">
+               <div>
+               <p className="mb-3 font-semibold text-cyan-300">Services</p>
+               <h2 className="text-3xl font-bold md:text-5xl">
+                  Apa yang bisa saya bantu?
+               </h2>
+               <p className="mt-5 leading-relaxed text-slate-300">
+                  Saya bisa membantu membuat website yang langsung bisa dipakai untuk
+                  promosi, portfolio, company profile, atau kebutuhan bisnis kecil.
+               </p>
+               </div>
+
+               <div className="grid gap-4 sm:grid-cols-2">
+               {services.map((service) => (
+                  <div
+                     key={service}
+                     className="rounded-3xl border border-white/10 bg-white/[0.04] p-6 transition hover:-translate-y-1 hover:border-cyan-300/60"
+                  >
+                     <p className="text-lg font-semibold">{service}</p>
+                  </div>
+               ))}
+               </div>
+            </div>
+
+            <div className="mt-16">
+               <div className="mb-8 text-center">
+               <p className="mb-3 font-semibold text-cyan-300">Paket Harga</p>
+               <h3 className="text-3xl font-bold md:text-4xl">
+                  Pilih paket sesuai kebutuhan website kamu
+               </h3>
+               <p className="mx-auto mt-4 max-w-2xl text-slate-300">
+                  Harga sudah termasuk pembuatan landing page, tampilan responsive,
+                  tombol WhatsApp, dan deploy ke Vercel.
+               </p>
+               </div>
+
+               <div className="grid gap-6 md:grid-cols-2">
+               {pricingPackages.map((pkg, index) => (
+                  <div
+                     key={pkg.name}
+                     className={`relative overflow-hidden rounded-3xl border p-7 transition hover:-translate-y-1 ${
+                     index === 1
+                        ? "border-cyan-300/60 bg-cyan-300/10"
+                        : "border-white/10 bg-white/[0.04]"
+                     }`}
+                  >
+                     {index === 1 && (
+                     <div className="absolute right-5 top-5 rounded-full bg-cyan-300 px-3 py-1 text-xs font-bold text-slate-950">
+                        Best Value
+                     </div>
+                     )}
+
+                     <p className="text-lg font-semibold text-cyan-300">{pkg.name}</p>
+
+                     <div className="mt-3 flex items-end gap-2">
+                     <h4 className="text-4xl font-bold text-white">{pkg.price}</h4>
+                     <span className="mb-1 text-sm text-slate-400">/ project</span>
+                     </div>
+
+                     <p className="mt-4 leading-relaxed text-slate-300">
+                     {pkg.description}
+                     </p>
+
+                     <ul className="mt-6 space-y-3">
+                     {pkg.features.map((feature) => (
+                        <li key={feature} className="flex gap-3 text-slate-300">
+                           <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-cyan-300/20 text-xs text-cyan-300">
+                           ✓
+                           </span>
+                           <span>{feature}</span>
+                        </li>
+                     ))}
+                     </ul>
+
+                     <a
+                     href={`https://wa.me/6281947714606?text=${encodeURIComponent(
+                        `Halo Rashad, saya tertarik dengan ${pkg.name} untuk pembuatan website.`
+                     )}`}
+                     target="_blank"
+                     rel="noreferrer"
+                     className="mt-7 inline-flex w-full justify-center rounded-full bg-cyan-400 px-6 py-3 font-semibold text-slate-950 transition hover:bg-cyan-300"
+                     >
+                     Pilih Paket
+                     </a>
+                  </div>
+               ))}
+               </div>
+            </div>
+         </div>
       </section>
       <section id="contact" className="scroll-mt-24 px-6 py-24">
       <div className="mx-auto max-w-5xl rounded-[2rem] border border-cyan-300/20 bg-gradient-to-br from-cyan-400/10 to-indigo-500/10 p-8 md:p-12">
